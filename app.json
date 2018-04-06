@@ -1,0 +1,7 @@
+{
+    "name": "puente-dashboard",
+    "description": "Dashboard for Data Analysis and Reporting",
+    "repository": "https://github.com/hopetambala/puente-dashboard",
+    "logo": "http://pereless360.com/img/SP/Ghost/360-logo-white.png",
+    "keywords": ["ionic3", "heroku", "hopetambala"]
+}
