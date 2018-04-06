@@ -1,0 +1,16 @@
+page-maps {
+	/**
+	* LAPTOP and up (992px)
+	*/
+	@media (min-width: map-get($grid-breakpoints, lg)) {
+
+	}
+	
+	/**
+	* IPAD and up (796px)
+	*/
+	@media (min-width: map-get($grid-breakpoints, md)) {
+
+	}
+
+}
