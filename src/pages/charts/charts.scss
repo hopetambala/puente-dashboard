@@ -2,6 +2,13 @@ page-charts {
 	/**
 	* LAPTOP and up (992px)
 	*/
+	.charts-header{
+		color: goldenrod
+	}
+	.charts-content{
+		background-color: #333333;
+		color: goldenrod
+	}
 	@media (min-width: map-get($grid-breakpoints, lg)) {
 
 	}

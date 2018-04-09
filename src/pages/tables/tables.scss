@@ -2,6 +2,14 @@ page-tables {
 	/**
 	* LAPTOP and up (992px)
 	*/
+	.tables-header{
+		color: goldenrod
+	}
+	.tables-content{
+		background-color: #333333;
+		color: goldenrod
+	}
+
 	@media (min-width: map-get($grid-breakpoints, lg)) {
 
 	}
