@@ -25,15 +25,16 @@ export class MapsPage {
   }
 
   ionViewDidEnter(){
-    this.loadmap();
+    this.loadmapGeneric();
   }
 
-  loadmap() {
+  loadmapGeolocation() {
     this.map = leaflet.map("map").fitWorld();
     leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attributions: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
       maxZoom: 18
     }).addTo(this.map);
+    
     this.map.locate({
       setView: true,
       maxZoom: 10
@@ -49,4 +50,13 @@ export class MapsPage {
     })
   }
 
+  loadmapGeneric() {
+    this.map = leaflet.map("map").setView([18.9115, -70.7377], 13);
+    leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attributions: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+      minZoom: 15,
+      maxZoom: 30
+      
+    }).addTo(this.map);
+  }
 }
