@@ -8,7 +8,37 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="dashboard-content">
-  <h3>This Would Be the Main Page</h3>
-  <h3>Holds Basic Data Visualizations</h3>
+<ion-content>
+	<ion-item padding class="dashboard-content">
+		<h3>This Would Be the Main Page</h3>
+		<h3>Holds Basic Data Visualizations, Survey Collection Tracker, and Calendar</h3>
+  	</ion-item>
+	<ion-item class="dashboard-content">
+	    <ion-card>
+	      <ion-card-header class="card-header">
+	        # of Residents with Diabetes Diagnosis Bar Chart
+	      </ion-card-header>
+	      <ion-card-content>
+	        <canvas #barCanvas></canvas>
+	      </ion-card-content>
+	    </ion-card>
+	 
+	    <ion-card>
+	      <ion-card-header class="card-header">
+	        Available Water Frequency Doughnut Chart
+	      </ion-card-header>
+	      <ion-card-content>
+	        <canvas #doughnutCanvas></canvas>
+	      </ion-card-content>
+	    </ion-card>
+	 
+	    <ion-card>
+	      <ion-card-header class="card-header">
+	        Time Progression of Zika Cases Line Chart
+	      </ion-card-header>
+	      <ion-card-content>
+	        <canvas #lineCanvas></canvas>
+	      </ion-card-content>
+	    </ion-card>
+    </ion-item>
 </ion-content>

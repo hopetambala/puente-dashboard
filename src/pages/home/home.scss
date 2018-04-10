@@ -7,6 +7,19 @@ page-home {
 		background-color: #333333;
 		color: goldenrod
 	}
+
+	.scroll-content {
+        background-color: map-get($colors, primary);
+    }
+ 
+    ion-card-header {
+        font-weight: bold;
+    }
+    .card-header{
+    	color: goldenrod;
+    	background-color: map-get($colors, primary-black);
+    	padding: true;
+    }
 	
 	/**
 	* LAPTOP and up (992px)
