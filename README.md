@@ -8,17 +8,18 @@
 ![](https://img.shields.io/badge/angular_2+-✓-blue.svg)
 ![](https://img.shields.io/badge/parse_server-✓-blue.svg)
 
-# About this starter
+# About this Project
 
 This is a Dashboard Application that integrates Ionic 3, Angular 2+ and Parse Server.
 It presents interactive mapping, animated charts, and smart tables to help consumers
-manage their community development information and data
+manage their community development information and data. It's connected to the same database as
+[puente-data-collection](https://github.com/hopetambala/puente-data-collection), another project in my repo.
 
 ## Some screenshots
 
 <p align="center">
-  <img src="https://github.com/hopetambala/puente-dashboard/resources/screenshots/map.png" width="40%" />
-  <img src="https://github.com/hopetambala/puente-dashboard/resources/screenshots/table.png" width="40%" />
+  <img src="https://github.com/hopetambala/puente-dashboard/blob/master/resources/screenshots/map.png" width="40%" />
+  <img src="https://github.com/hopetambala/puente-dashboard/blob/master/resources/screenshots/table.png" width="40%" />
 </p>
 
 # File structure
@@ -116,7 +117,7 @@ Parse offer a backend to store data, push notifications, social media integratio
 - **Storage**: No restricted time limits and no file storage restrictions. Control over backup, restore and database indexes
 - **Ideal for**: General purpose applications
 
-**Back4App** is a BaaS provider much akin to the previous Parse.Com platform before it became open-source.
+**Back4App** is a BaaS provider much akin to the previous Parse.Com platform before it became open-source. [Back4app](https://www.back4app.com/) it's also open source and user-friendly platform that lets you build, host and manage applications.
 
 # Contribution
 
