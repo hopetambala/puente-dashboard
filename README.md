@@ -117,7 +117,7 @@ Parse offer a backend to store data, push notifications, social media integratio
 - **Storage**: No restricted time limits and no file storage restrictions. Control over backup, restore and database indexes
 - **Ideal for**: General purpose applications
 
-**Back4App** is a BaaS provider much akin to the previous Parse.Com platform before it became open-source.
+**Back4App** is a BaaS provider much akin to the previous Parse.Com platform before it became open-source. [Back4app](https://www.back4app.com/) it's also open source and user-friendly platform that lets you build, host and manage applications.
 
 # Contribution
 
