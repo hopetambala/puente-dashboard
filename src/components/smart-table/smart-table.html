@@ -1,0 +1,19 @@
+<!--nb-card>
+  <nb-card-header>
+    Smart Table
+  </nb-card-header>
+
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card-->
+
+<ion-content class='table-content'>
+	<ion-item class='table-item' padding>
+		<input #search class="search" type="text" placeholder="Search..." (keydown.enter)="onSearch(search.value)">
+	</ion-item>
+	<ion-item class='table-item'>
+		<ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)"></ng2-smart-table>
+	</ion-item>
+</ion-content>

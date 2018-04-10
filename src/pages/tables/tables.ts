@@ -18,46 +18,6 @@ import { NavController, NavParams } from 'ionic-angular';
   
 })
 export class TablesPage {
-  
-  //Fill settings with Column Headings from Parse Server
-  settings = {
-    columns: {
-      id: {
-        title: 'ID'
-      },
-      fname: {
-        title: 'First Name'
-      },
-      lname: {
-        title: 'Last Name'
-      },
-      DiabetesDiagnosis: {
-        title: 'Diagnosis of Diabetes'
-      },
-      Availability: {
-        title: 'When Are You Usually Available?'
-      }
-    }
-  };
-  
-  //Fill array with data from Pars Server
-  data = [
-    {
-      id: 1,
-      fname: "Test",
-      lname: "Testerton",
-      DiabetesDiagnosis: "Nope",
-      Availability: "Always"
-    },
-    // ... other rows here
-    {
-      id: 1,
-      fname: "Test",
-      lname: "Testy",
-      DiabetesDiagnosis: "Yes",
-      Availability: "Never"
-    }
-  ];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

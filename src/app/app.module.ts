@@ -15,6 +15,10 @@ import { TablesPage } from '../pages/tables/tables';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ParseServerProvider } from '../providers/parse-server/parse-server';
+
+//Custom Components
+import { SmartTableComponent } from '../components/smart-table/smart-table'
 
 @NgModule({
   declarations: [
@@ -23,7 +27,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ChartsPage,
     AccountPage,
     MapsPage,
-    TablesPage
+    TablesPage,
+    SmartTableComponent
     //ListPage
   ],
   imports: [
@@ -44,7 +49,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ParseServerProvider
   ]
 })
 export class AppModule {}
