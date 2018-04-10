@@ -8,11 +8,12 @@
 ![](https://img.shields.io/badge/angular_2+-✓-blue.svg)
 ![](https://img.shields.io/badge/parse_server-✓-blue.svg)
 
-# About this starter
+# About this Project
 
 This is a Dashboard Application that integrates Ionic 3, Angular 2+ and Parse Server.
 It presents interactive mapping, animated charts, and smart tables to help consumers
-manage their community development information and data
+manage their community development information and data. It's connected to the same database as
+puente-data-collection, another project in my repo.
 
 ## Some screenshots
 
