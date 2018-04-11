@@ -7,7 +7,8 @@ page-tables {
 	}
 	.tables-content{
 		background-color: #333333;
-		color: goldenrod
+		color: goldenrod;
+		overflow-x: scroll;
 	}
 
 	@media (min-width: map-get($grid-breakpoints, lg)) {
