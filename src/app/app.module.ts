@@ -19,6 +19,7 @@ import { SmartTableComponent } from '../components/smart-table/smart-table'
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ParseServerProvider } from '../providers/parse-server/parse-server';
+import { FileManagementProvider } from '../providers/file-management/file-management';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { ParseServerProvider } from '../providers/parse-server/parse-server';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ParseServerProvider
+    ParseServerProvider,
+    FileManagementProvider
   ]
 })
 export class AppModule {}
