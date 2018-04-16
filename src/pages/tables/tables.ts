@@ -74,8 +74,8 @@ export class TablesPage {
     
     const headers = Object.keys(items[0])
     
-    var csv = items.map(row => headers.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(';'))
-    csv.unshift(headers.join(';'))
+    var csv = items.map(row => headers.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','))
+    csv.unshift(headers.join(','))
 
     return csv.join('\r\n'); 
   }
