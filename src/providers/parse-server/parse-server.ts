@@ -1,11 +1,5 @@
 //import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-<<<<<<< HEAD
-import 'rxjs/add/operator/map';
-
-// Parse
-=======
->>>>>>> 705b49ade167d1c5e169a3dfbce510662b92f62a
 import { Parse } from 'parse';
 
 // Constants
@@ -21,13 +15,6 @@ import { ENV } from '../../app/app.constant';
 export class ParseServerProvider {
   private parseAppId: string = ENV.parseAppId;
   private parseServerUrl: string = ENV.parseServerUrl;
-<<<<<<< HEAD
-
-
-  constructor(public http: HttpClient) {
-    this.parseInitialize();
-    console.log('Initiated Parse');
-=======
   //private parseJavascriptKey: string = ENV.parseJavascriptKey;
 
   constructor() {
@@ -69,13 +56,6 @@ export class ParseServerProvider {
         });
       }, 500);
     });
->>>>>>> 705b49ade167d1c5e169a3dfbce510662b92f62a
-  }
-  //Function
-  //Initializes Parse-Server
-  private parseInitialize() {
-    Parse.initialize(this.parseAppId);
-    Parse.serverURL = this.parseServerUrl;
   }
 
 
