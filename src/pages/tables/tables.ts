@@ -3,9 +3,6 @@ import { NavController, NavParams } from 'ionic-angular';
 import { ParseServerProvider } from '../../providers/parse-server/parse-server';
 
 
-import { ParseServerProvider } from '../../providers/parse-server/parse-server';
-
-
 
 /**
  * Generated class for the TablesPage page.
@@ -24,15 +21,11 @@ import { ParseServerProvider } from '../../providers/parse-server/parse-server';
 })
 export class TablesPage {
 
-<<<<<<< HEAD
-  constructor(public navCtrl: NavController, public navParams: NavParams, private parseServerProvider: ParseServerProvider) {
-=======
   //Array to Hold listQuery() results
   queryResults = []
 
   constructor(private parseProvider: ParseServerProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.listQuery();
->>>>>>> 705b49ade167d1c5e169a3dfbce510662b92f62a
   }
 
   ionViewDidLoad() {
