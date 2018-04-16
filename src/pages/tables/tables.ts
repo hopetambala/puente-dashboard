@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { ParseServerProvider } from '../../providers/parse-server/parse-server';
+
 
 
 /**
@@ -19,7 +21,7 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class TablesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private parseServerProvider: ParseServerProvider) {
   }
 
   ionViewDidLoad() {

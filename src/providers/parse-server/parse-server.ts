@@ -1,5 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import 'rxjs/add/operator/map';
+
+// Parse
+import { Parse } from 'parse';
+
+// Constants
+import { ENV } from '../../app/app.constant';
 
 /*
   Generated class for the ParseServerProvider provider.
@@ -9,9 +16,20 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class ParseServerProvider {
+  private parseAppId: string = ENV.parseAppId;
+  private parseServerUrl: string = ENV.parseServerUrl;
+
 
   constructor(public http: HttpClient) {
-    console.log('Hello ParseServerProvider Provider');
+    this.parseInitialize();
+    console.log('Initiated Parse');
   }
+  //Function
+  //Initializes Parse-Server
+  private parseInitialize() {
+    Parse.initialize(this.parseAppId);
+    Parse.serverURL = this.parseServerUrl;
+  }
+
 
 }

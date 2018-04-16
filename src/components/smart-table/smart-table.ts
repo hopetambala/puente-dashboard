@@ -7,6 +7,8 @@ import { LocalDataSource } from 'ng2-smart-table';
 })
 export class SmartTableComponent {
   //Fill settings with Column Headings from Parse Server
+  
+  /*Test Settings
   settings = {
     columns: {
       id: {
@@ -31,7 +33,8 @@ export class SmartTableComponent {
       }
     }
   };
-
+  */
+  settings = { columns: {} }
   //Loads Data into component
   source: LocalDataSource = new LocalDataSource();
 
@@ -67,10 +70,10 @@ export class SmartTableComponent {
 
   onSearch(query: string = '') {
     this.source.setFilter([
-	// fields we want to include in the search
-	// second parameter specifying whether to perform 'AND' or 'OR' search 
-	// (meaning all columns should contain search query or at least one)
-	// 'AND' by default, so changing to 'OR' by setting false here
+    // fields we want to include in the search
+    // second parameter specifying whether to perform 'AND' or 'OR' search 
+    // (meaning all columns should contain search query or at least one)
+    // 'AND' by default, so changing to 'OR' by setting false here
       {
         field: 'id',
         search: query
