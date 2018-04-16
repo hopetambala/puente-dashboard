@@ -10,14 +10,40 @@
   	<button ion-button menuToggle>
       <ion-icon name="menu" color="primary"></ion-icon>
     </button>
-    <h3>Tables</h3>
+    <h3>Survey Table</h3>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding class="tables-content">
-  <h3>Smart Table</h3>
-  <!--ng2-smart-table [settings]="settings" [source]="data"></ng2-smart-table-->
-  <smart-table></smart-table>
+  <!--h3>Survey Results</h3-->
+  <!--smart-table></smart-table-->
+  
+
+  <!--ion-item-divider color="primary">
+    Completed Surveys
+  </ion-item-divider-->
+  <ion-item *ngFor="let queryResult of queryResults" align="justify" class="tables-content" >
+    <h1>{{ queryResult.get('fname') }}</h1>
+    <p>{{ queryResult.get('lname') }}</p>
+    
+    <!--table>
+      <tr align="justify">
+        <th>Name</th>
+        <th>Last Name</th>
+        <th>Sex</th>
+      </tr>
+      <tr *ngFor="let queryResult of queryResults" align="justify">
+        <td>{{ queryResult.get('fname') }}</td>
+        <td>{{ queryResult.get('lname') }}</td>
+        <td>{{ queryResult.get('sex') }}</td>
+      </tr>
+    </table-->
+  </ion-item>
+
+  <ion-infinite-scroll (ionInfinite)="$event.waitFor(listQuery())">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>
