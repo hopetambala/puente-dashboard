@@ -14,6 +14,11 @@ page-tables {
 			color: goldenrod;
 			background-color: map-get($colors, primary-grey);
 		}
+
+		td {
+			word-wrap: break-word;
+			//border: 1px solid black;
+		}
 	}
 
 	@media (min-width: map-get($grid-breakpoints, lg)) {

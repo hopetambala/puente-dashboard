@@ -1,9 +1,10 @@
+//Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 
-
+//Pages
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ChartsPage } from '../pages/charts/charts';
@@ -12,13 +13,12 @@ import { MapsPage } from '../pages/maps/maps';
 import { TablesPage } from '../pages/tables/tables';
 //import { ListPage } from '..pages/list/list';
 
+//My Custom Components
+import { SmartTableComponent } from '../components/smart-table/smart-table'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ParseServerProvider } from '../providers/parse-server/parse-server';
-
-//Custom Components
-import { SmartTableComponent } from '../components/smart-table/smart-table'
 
 @NgModule({
   declarations: [
