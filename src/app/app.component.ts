@@ -28,7 +28,7 @@ export class MyApp {
     this.pages = [
       { title: 'Dashboard', component: HomePage },
       { title: 'Visual Analytics', component: ChartsPage },
-      { title: 'Tables', component: TablesPage },
+      { title: 'Survey Results Table', component: TablesPage },
       { title: 'Maps', component: MapsPage },
       { title: 'Account', component: AccountPage }
       //{ title: 'List', component: ListPage }

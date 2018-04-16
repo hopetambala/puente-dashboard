@@ -9,6 +9,11 @@ page-tables {
 		background-color: #333333;
 		color: goldenrod;
 		overflow-x: scroll;
+
+		h2 {
+			color: goldenrod;
+			background-color: map-get($colors, primary-grey);
+		}
 	}
 
 	@media (min-width: map-get($grid-breakpoints, lg)) {
