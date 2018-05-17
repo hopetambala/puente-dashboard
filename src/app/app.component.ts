@@ -12,29 +12,62 @@ import { TablesPage } from '../pages/tables/tables';
 //import { ListPage } from '../pages/list/list';
 import { SigninPage } from '../pages/signin/signin';
 
+
+export class SinglePage {
+  title : string;
+  component : any;
+  activated : boolean = false;
+
+  constructor (title : string, component : any, activated : boolean) {
+    this.title = title;
+    this.component = component;
+    this.activated = activated;
+  }
+}
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  //rootPage: any = HomePage;
   rootPage: any = SigninPage;
+  //rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<SinglePage>;
+
+  //Basic
+  tier1:Array<SinglePage> = [
+    new SinglePage('Dashboard',HomePage,true),
+    //new SinglePage('Models',ChartsPage,true),
+    new SinglePage('Data Tables',TablesPage,true),
+    //new SinglePage('Maps',MapsPage,true),
+    new SinglePage('Account',AccountPage,true)
+  ]
+  //Enhanced
+  tier2:Array<SinglePage> = [
+    new SinglePage('Dashboard',HomePage,true),
+    //new SinglePage('Models',ChartsPage,true),
+    new SinglePage('Data Tables',TablesPage,true),
+    new SinglePage('Maps',MapsPage,true),
+    new SinglePage('Account',AccountPage,true)
+  ]
+
+  //Premium
+  tier3:Array<SinglePage> = [
+    new SinglePage('Dashboard',HomePage,true),
+    new SinglePage('Data Models',ChartsPage,true),
+    new SinglePage('Data Tables',TablesPage,true),
+    new SinglePage('Maps',MapsPage,true),
+    new SinglePage('Account',AccountPage,true)
+  ]
+
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for  ngFor and navigation
-    this.pages = [
-      { title: 'Dashboard', component: HomePage },
-      { title: 'Visual Analytics', component: ChartsPage },
-      { title: 'Survey Results Table', component: TablesPage },
-      { title: 'Maps', component: MapsPage },
-      { title: 'Account', component: AccountPage }
-      //{ title: 'List', component: ListPage }
-    ];
+    this.pages = this.tier3;
 
   }
 

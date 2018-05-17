@@ -42,5 +42,29 @@ page-signin {
         //background-color: black;
         background-color:map-get($colors,primary);
     }
+
+    .logo-subtitle{
+        opacity: 0;
+        //transform: rotate3d(1, 1, 0, 50deg);
+        animation: 2.5s 1s ease fadeInAndSpin;
+        animation-fill-mode: forwards;
+    }
     
+}
+
+@keyframes fadeInAndSpin {
+
+    100% {
+        opacity: 1;
+        //transform: rotate3d(1, 1, 0, 0deg);
+    }
+
+}
+
+@keyframes fadeIn {
+
+    100% {
+        opacity: 1;
+    }
+
 }
