@@ -1,0 +1,19 @@
+page-signup {
+    
+    .fillin {
+        background-color:map-get($colors,primary-grey);
+        
+        ion-label{
+          color: map-get($colors,primary);
+
+        }
+        ion-input{
+            color: map-get($colors,primary);
+        }
+
+        ion-item{
+            background-color: map-get($colors,primary-grey);
+            color: white;   
+        }
+    }
+}

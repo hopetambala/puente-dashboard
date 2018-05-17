@@ -10,6 +10,7 @@ import { AccountPage } from '../pages/account/account';
 import { MapsPage } from '../pages/maps/maps';
 import { TablesPage } from '../pages/tables/tables';
 //import { ListPage } from '../pages/list/list';
+import { SigninPage } from '../pages/signin/signin';
 
 @Component({
   templateUrl: 'app.html'
@@ -17,14 +18,15 @@ import { TablesPage } from '../pages/tables/tables';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  //rootPage: any = HomePage;
+  rootPage: any = SigninPage;
 
   pages: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
-    // used for an example of ngFor and navigation
+    // used for  ngFor and navigation
     this.pages = [
       { title: 'Dashboard', component: HomePage },
       { title: 'Visual Analytics', component: ChartsPage },

@@ -6,7 +6,14 @@
   	<button ion-button menuToggle>
       <ion-icon name="menu" color="primary"></ion-icon>
     </button>
-    <h3>Account</h3>
+    
+    <h3 text-center>Account</h3>
+
+		<ion-buttons right>
+      <button color="primary" ion-button icon-only (click)="signout()" >
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
