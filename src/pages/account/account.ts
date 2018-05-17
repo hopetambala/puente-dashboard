@@ -1,5 +1,12 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { App, NavController, NavParams } from 'ionic-angular';
+
+//Providers
+import { AuthProvider } from '../../providers/auth/auth';
+import { AlertsProvider } from '../../providers/alerts/alerts';
+
+// Pages
+import { SigninPage } from '../signin/signin';
 
 /**
  * Generated class for the AccountPage page.
@@ -14,11 +21,23 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class AccountPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    public auth:AuthProvider,
+    private app: App,
+    private alerts:AlertsProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AccountPage');
+  }
+
+  //Authentication
+  public signout() {
+    this.auth.signout().subscribe(() => {
+      this.app.getRootNav().setRoot(SigninPage);
+    });
+    this.alerts.presentToast('Signing Out');
   }
 
 }

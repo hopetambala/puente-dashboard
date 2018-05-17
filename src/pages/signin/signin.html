@@ -1,0 +1,31 @@
+<ion-content>
+  <ion-content padding class="background">
+    <p class="logo">
+      <!-- <img src="http://placehold.it/300x200"/> -->
+      <img src="assets/imgs/logo.png" />
+    </p>
+
+    <form (submit)="doSignin()">
+      <ion-list inset padding>
+
+        <ion-item class="fillin">
+          <ion-label color="primary-black">Username</ion-label>
+          <ion-input color="primary-black" type="text" [(ngModel)]="username" name="username"></ion-input>
+        </ion-item>
+
+        <ion-item class="fillin">
+          <ion-label color="primary-black" >Password</ion-label>
+          <ion-input color="primary-black" type="password" [(ngModel)]="password" name="password"></ion-input>
+        </ion-item>
+
+        <div padding>
+          <button ion-button color="primary-black" round block>Login</button>
+          <p></p>
+          <button ion-button color="primary-black" [navPush]="signupPage" round block outline>Signup</button>
+        </div>
+
+      </ion-list>
+      </form>
+    </ion-content>
+
+</ion-content>

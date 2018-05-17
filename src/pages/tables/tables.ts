@@ -32,7 +32,7 @@ export class TablesPage {
   constructor(private fileManagementProvider:FileManagementProvider, private parseProvider: ParseServerProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.listQuery();
     
-    //JSON File
+    //TEST JSON File
     var items = [
       { name: "Dona", lname: "Luisa", sex: "Female" },
       { name: "Doggy", lname: "Dog", sex: "Dog?" },

@@ -11,6 +11,8 @@ import { ChartsPage } from '../pages/charts/charts';
 import { AccountPage } from '../pages/account/account';
 import { MapsPage } from '../pages/maps/maps';
 import { TablesPage } from '../pages/tables/tables';
+import { SigninPage } from '../pages/signin/signin';
+import { SignupPage } from '../pages/signup/signup';
 //import { ListPage } from '..pages/list/list';
 
 //My Custom Components
@@ -18,8 +20,12 @@ import { SmartTableComponent } from '../components/smart-table/smart-table'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+//Providers
 import { ParseServerProvider } from '../providers/parse-server/parse-server';
+import { AuthProvider } from '../providers/auth/auth';
 import { FileManagementProvider } from '../providers/file-management/file-management';
+import { AlertsProvider } from '../providers/alerts/alerts';
 
 @NgModule({
   declarations: [
@@ -29,6 +35,8 @@ import { FileManagementProvider } from '../providers/file-management/file-manage
     AccountPage,
     MapsPage,
     TablesPage,
+    SigninPage,
+    SignupPage,
     SmartTableComponent
     //ListPage
   ],
@@ -44,7 +52,9 @@ import { FileManagementProvider } from '../providers/file-management/file-manage
     ChartsPage,
     AccountPage,
     MapsPage,
-    TablesPage
+    TablesPage,
+    SigninPage,
+    SignupPage
     //ListPage
   ],
   providers: [
@@ -52,7 +62,9 @@ import { FileManagementProvider } from '../providers/file-management/file-manage
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ParseServerProvider,
-    FileManagementProvider
+    FileManagementProvider,
+    AuthProvider,
+    AlertsProvider
   ]
 })
 export class AppModule {}
