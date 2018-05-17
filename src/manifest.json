@@ -1,6 +1,6 @@
 {
-  "name": "Puente Data Analytics",
-  "short_name": "Analytics",
+  "name": "Puente Dashboard",
+  "short_name": "Dashboard",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{
