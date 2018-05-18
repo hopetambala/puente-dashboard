@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, LoadingController, AlertController } from 'ionic-angular';
+import { NavController, LoadingController, AlertController } from 'ionic-angular';
 
 // Providers
 import { AuthProvider } from '../../providers/auth/auth';
@@ -16,7 +16,6 @@ import { HomePage } from '../home/home';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-signin',
   templateUrl: 'signin.html',

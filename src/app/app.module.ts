@@ -13,7 +13,7 @@ import { MapsPage } from '../pages/maps/maps';
 import { TablesPage } from '../pages/tables/tables';
 import { SigninPage } from '../pages/signin/signin';
 import { SignupPage } from '../pages/signup/signup';
-//import { ListPage } from '..pages/list/list';
+import { ListPage } from '../pages/list/list'; //Does Nothing
 
 //My Custom Components
 import { SmartTableComponent } from '../components/smart-table/smart-table'
@@ -37,8 +37,8 @@ import { AlertsProvider } from '../providers/alerts/alerts';
     TablesPage,
     SigninPage,
     SignupPage,
+    ListPage,
     SmartTableComponent
-    //ListPage
   ],
   imports: [
     BrowserModule,
@@ -54,8 +54,8 @@ import { AlertsProvider } from '../providers/alerts/alerts';
     MapsPage,
     TablesPage,
     SigninPage,
-    SignupPage
-    //ListPage
+    SignupPage,
+    ListPage
   ],
   providers: [
     StatusBar,
