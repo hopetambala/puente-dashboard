@@ -12,6 +12,7 @@ export class User {
   public id: string;
   public name: string;
   public email: string;
+  public organization: string;
 }
 
 @Injectable()
@@ -69,7 +70,7 @@ export class AuthProvider {
       user.set('username', username);
       user.set('password', password);
       user.set('email', email);
-      user.set('organization', organization)
+      user.set('organization', organization);
 
       user.signUp(null, {
         success: (user) => {
@@ -102,6 +103,7 @@ export class AuthProvider {
       user.id = u.id;
       user.name = u.get('username');
       user.email = u.get('email');
+      user.organization = u.get('organization');
       return user;
     }
     return null
