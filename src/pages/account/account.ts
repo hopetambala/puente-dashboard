@@ -4,6 +4,7 @@ import { App, NavController, NavParams } from 'ionic-angular';
 //Providers
 import { AuthProvider } from '../../providers/auth/auth';
 import { AlertsProvider } from '../../providers/alerts/alerts';
+//import { ParseServerProvider } from '../../providers/parse-server/parse-server';
 
 // Pages
 import { SigninPage } from '../signin/signin';
@@ -25,7 +26,11 @@ export class AccountPage {
     public navParams: NavParams,
     public auth:AuthProvider,
     private app: App,
-    private alerts:AlertsProvider) {
+    private alerts:AlertsProvider,) {
+    //private parseSrvePrvdr:ParseServerProvider) {
+      //var tricks;
+      //var response = this.parseSrvePrvdr.runCloudFunction('hello',tricks);
+      //console.log(response);
   }
 
   ionViewDidLoad() {
@@ -39,5 +44,6 @@ export class AccountPage {
     });
     this.alerts.presentToast('Signing Out');
   }
+
 
 }

@@ -15,7 +15,7 @@ import { ENV } from '../../app/app.constant';
 export class ParseServerProvider {
   private parseAppId: string = ENV.parseAppId;
   private parseServerUrl: string = ENV.parseServerUrl;
-  //private parseJavascriptKey: string = ENV.parseJavascriptKey;
+  private parseJavascriptKey: string = ENV.parseJavascriptKey;
 
   constructor() {
     console.log('Hello ParseServerProvider Provider');
@@ -25,7 +25,7 @@ export class ParseServerProvider {
 
   //Initialize Parse Server
   private parseInitialize() {
-    Parse.initialize(this.parseAppId);
+    Parse.initialize(this.parseAppId,this.parseJavascriptKey);
     Parse.serverURL = this.parseServerUrl;
   }
 
@@ -48,7 +48,7 @@ export class ParseServerProvider {
         //You can limit the number of results by setting "limit"
         query.limit(limit);
 
-        //Below searches what's in the surveyPoints array
+       
         query.find().then((objectPoints) => {
           resolve(objectPoints);
         }, (error) => {
@@ -58,6 +58,9 @@ export class ParseServerProvider {
     });
   }
 
+  runCloudFunction (funcname : string, funcbody : any) {
+    return Parse.Cloud.run(funcname, funcbody);
+  }
 
 }
 

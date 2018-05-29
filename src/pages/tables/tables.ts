@@ -23,25 +23,30 @@ import { FileManagementProvider } from '../../providers/file-management/file-man
 export class TablesPage {
 
   //Array to Hold listQuery() results
-  queryResults = []
+  queryResults = [];
+  dataArray = [];
 
   //Strings to Help with File-Management
   storageDirectory: string = '';
   csvStr : string = '';
 
-  constructor(private fileManagementProvider:FileManagementProvider, private parseProvider: ParseServerProvider, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private fileManagementProvider:FileManagementProvider, public parseProvider: ParseServerProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.listQuery();
+    this.convertQuery();
     
     //TEST JSON File
+    /*
     var items = [
       { name: "Dona", lname: "Luisa", sex: "Female" },
       { name: "Doggy", lname: "Dog", sex: "Dog?" },
       { name: "Toilet", lname: "Man", sex: "Sorry" }
     ];
+    */
     //Pushes JSON "items" into "csvStr" then calls "convertToCSV" to convert the files
-    this.csvStr = this.convertToCSV(items);
-    console.log(this.csvStr);
-    this.storageDirectory = fileManagementProvider.getStorageDirectory();
+    //var items = this.convertToCSV(this.dataArray);
+    //this.csvStr = items;
+    //this.storageDirectory = fileManagementProvider.getStorageDirectory();
+    
   }
 
   ionViewDidLoad() {
@@ -68,14 +73,37 @@ export class TablesPage {
     });
   }
 
+  public convertQuery(){
+    //Creates a natural "skip" of certain results based on surveyPoints length
+    let offset = this.queryResults.length;
+
+    //Limits the length of the searched results
+    let limit = 100;
+
+    //Returns the query then displays those "result" by pushing into surveyPoints object
+    return this.parseProvider.getQuery(offset, limit, 'SurveyData').then((result) => {
+      for (let i = 0; i < result.length; i++) {
+        let object = result[i];
+        this.dataArray.push(object.attributes);
+        //console.log(object.attributes);
+      }
+      //console.log(dataArray);
+      console.log(this.dataArray);
+
+    }, (error) => {
+      console.log(error);
+    });
+    //console.log(dataArray);
+  }
+
   //Save JSON data to CSV file
   convertToCSV(items) {
-    const replacer = (key, value) => value === null ? '' : value // specify how you want to handle null values here
+    const replacer = (key, value) => value === null ? 'NaN' : value ;// specify how you want to handle null values here
     
-    const headers = Object.keys(items[0])
+    const headers = Object.keys(items[0]);
     
-    var csv = items.map(row => headers.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','))
-    csv.unshift(headers.join(','))
+    var csv = items.map(row => headers.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','));
+    csv.unshift(headers.join(','));
 
     return csv.join('\r\n'); 
   }
