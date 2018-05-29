@@ -84,7 +84,8 @@ export class MapsPage {
           center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
           zoom: 5,
           fullscreenControl: true,
-          mapTypeId: 'satellite'
+          mapTypeIds: ['satellite','roadmap', 'hybrid', 'terrain']
+          //mapTypeId: 'satellite'
           //mapTypeId: google.maps.MapTypeId.ROADMAP
         }
 

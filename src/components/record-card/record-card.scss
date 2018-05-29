@@ -5,7 +5,6 @@ record-card {
 
     /* entire container, keeps perspective */
     .flip-container {
-        
         //How wide the card flips
         perspective: 1000px;
     }
@@ -13,17 +12,20 @@ record-card {
     /* flip the pane when hovered */
     .flip-container.flipped .flipper {
         transform: rotateY(180deg);
+    
     }
 
     .flip-container, .front, .back {
         //Original
         //width: 90vw;
         width: 45vw;
+        width: 30vw;
 
         height: 40vh;
         
         //Original
-        margin: 20px auto;
+        margin: 0px auto;
+        //margin: 20px;
 
     }
 
@@ -63,5 +65,7 @@ record-card {
     .back {
         transform: rotateY(180deg);
     }
+
+    
 
 }
