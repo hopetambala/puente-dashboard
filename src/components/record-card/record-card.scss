@@ -5,6 +5,8 @@ record-card {
 
     /* entire container, keeps perspective */
     .flip-container {
+        
+        //How wide the card flips
         perspective: 1000px;
     }
 
@@ -14,9 +16,15 @@ record-card {
     }
 
     .flip-container, .front, .back {
-        width: 90vw;
+        //Original
+        //width: 90vw;
+        width: 45vw;
+
         height: 40vh;
+        
+        //Original
         margin: 20px auto;
+
     }
 
     /* flip speed goes here */

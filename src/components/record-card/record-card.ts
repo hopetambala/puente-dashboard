@@ -25,4 +25,15 @@ export class RecordCardComponent {
     this.flipped = !this.flipped;
   }
 
+  /*
+  Maybe a Modal?
+  goToCertainPage(session: any) {
+    this.navCtrl.push(SessionDetailPage, { sessionId: session.id });
+  }
+
+  goToCertainPage(speaker: any) {
+    this.navCtrl.push(SpeakerDetailPage, { speakerId: speaker.id });
+  }
+  */
+
 }
