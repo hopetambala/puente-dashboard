@@ -58,6 +58,41 @@ export class ParseServerProvider {
     });
   }
 
+  //This is Retrieving Survey Results from Parse Server
+  public geoQuery(lat: number, long: number, limit: number , parseClass: string, parseColumn: string, parseParam: string): Promise<any> {
+    //Returns the resolve (the query) and if there's an error, rejects
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        //Creates local object based on "SurveyData" Object in Parse-Server
+        const ParseClass = Parse.Object.extend(parseClass);
+
+        //Users Location by creaing geopoint
+        //var myLocation = new Parse.GeoPoint({latitude: lat, longitude: long});
+
+        //Query
+        //Queries the Class from Parse Server
+        let query = new Parse.Query(ParseClass);
+        
+        // Interested in locations (GeoPoint Column in Parse) near user.
+        //query.near("location", myLocation);
+        //query.withinMiles("location", myLocation, 5);
+
+        //You can limit the number of results by setting "limit"
+        query.limit(limit);
+
+        //Limiting Results based on a specific paramater in a specific field/column
+        query.equalTo(parseColumn, parseParam);
+
+        //Below searches what's in the surveyPoints array
+        query.find().then((results) => {
+          resolve(results);
+        }, (error) => {
+          reject(error);
+        });
+      }, 500);
+    });
+  }
+
   runCloudFunction (funcname : string, funcbody : any) {
     return Parse.Cloud.run(funcname, funcbody);
   }

@@ -15,8 +15,34 @@
 
 </ion-header>
 
+<ion-content class="page-background">
+  <ion-grid>
+    <ion-row align-items-stretch>
+        <ion-col col-12 col-md-6 align-self-stretch align-self-center>
+          <record-card>
+            <div class="flash-card-front">Business in the Front</div>
+          
+            <div class="flash-card-back">Party in the Back</div>
+          </record-card>
 
-<ion-content padding class="tables-content">
+          <record-card>
+            <div class="flash-card-front">Business in the Front</div>
+          
+            <div class="flash-card-back">Party in the Back</div>
+          </record-card>
+
+          <record-card>
+              <div class="flash-card-front">Business in the Front</div>
+            
+              <div class="flash-card-back">Party in the Back</div>
+          </record-card>
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+<!--ion-content padding class="tables-content">
   <button ion-button (click)="saveCsv()" color="secondary">Export</button>
   <ion-item *ngFor="let queryResult of queryResults" align="justify" class="tables-content" loadingSpinner="bubbles" >
     <h1>{{ queryResult.get('fname') }}</h1>
@@ -27,7 +53,7 @@
     <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
-</ion-content>
+</ion-content-->
 
 
   <!--table>
