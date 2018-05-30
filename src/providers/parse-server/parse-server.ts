@@ -20,18 +20,51 @@ export class ParseServerProvider {
   constructor() {
     console.log('Hello ParseServerProvider Provider');
     this.parseInitialize();
-    console.log('Initiated Parse');
   }
 
   //Initialize Parse Server
   private parseInitialize() {
-    Parse.initialize(this.parseAppId,this.parseJavascriptKey);
+    Parse.initialize(this.parseAppId,this.parseJavascriptKey).then(() =>{
+      console.log('Initiated Parse');
+    });
     Parse.serverURL = this.parseServerUrl;
+    
   }
 
-  //This is Retrieving Survey Results from Parse Server
-  //This is a copy of function in puente-data-colleciton../providers/parse
+  public basicQuery(offset: number = 0, limit: number = 3, parseObject: string, parseColumn: string, parseParam: string): Promise<any> {
+    //Returns the resolve (the query) and if there's an error, rejects
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        //Creates local object based on "SurveyData" Object in Parse-Server
+        const SurveyData = Parse.Object.extend(parseObject);
+
+        //Queries the SurveyData class from Parse Server
+        let query = new Parse.Query(SurveyData);
+        
+        //You can skip the first results by setting skip
+        query.skip(offset);
+
+        //You can limit the number of results by setting "limit"
+        query.limit(limit);
+
+        //Limiting Results based on a class
+        query.equalTo(parseColumn,parseParam);
+
+        //Below searches what's in the surveyPoints array
+        query.find().then((surveyPoints) => {
+          resolve(surveyPoints);
+        }, (error) => {
+          reject(error);
+        });
+      }, 500);
+    });
+  }
+
+  
   public getQuery(offset: number = 0, limit: number = 3, parseObject): Promise<any> {
+    //Legacy
+    //This is Retrieving Survey Results from Parse Server
+    //This is a copy of function in puente-data-colleciton../providers/parse
     //Returns the resolve (the query) and if there's an error, rejects
     return new Promise((resolve, reject) => {
       setTimeout(() => {

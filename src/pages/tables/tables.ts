@@ -22,9 +22,9 @@ import { FileManagementProvider } from '../../providers/file-management/file-man
 })
 export class TablesPage {
 
-  //Array to Hold listQuery() results
   queryResults = [];
   dataArray = [];
+  communityRecords: any[] = [];
 
   //Strings to Help with File-Management
   storageDirectory: string = '';
@@ -54,8 +54,15 @@ export class TablesPage {
     
   }
 
-  //Lists QueryData
+
+  //Function that constructs an Array of Community Records
+  public aggregateRecords(){
+    //get query from 
+  }
+
+
   public listQuery(){
+    //Lists QueryData
     //Creates a natural "skip" of certain results based on surveyPoints length
     let offset = this.queryResults.length;
 
@@ -72,7 +79,7 @@ export class TablesPage {
       console.log(error);
     });
   }
-
+  //TODO
   public convertQuery(){
     //Creates a natural "skip" of certain results based on surveyPoints length
     let offset = this.queryResults.length;
@@ -96,8 +103,9 @@ export class TablesPage {
     //console.log(dataArray);
   }
 
-  //Save JSON data to CSV file
   convertToCSV(items) {
+    //TODO?
+    //Save JSON data to CSV file
     const replacer = (key, value) => value === null ? 'NaN' : value ;// specify how you want to handle null values here
     
     const headers = Object.keys(items[0]);
