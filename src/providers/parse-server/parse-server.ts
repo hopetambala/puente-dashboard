@@ -24,9 +24,8 @@ export class ParseServerProvider {
 
   //Initialize Parse Server
   private parseInitialize() {
-    Parse.initialize(this.parseAppId,this.parseJavascriptKey).then(() =>{
-      console.log('Initiated Parse');
-    });
+    Parse.initialize(this.parseAppId,this.parseJavascriptKey);
+    console.log('Initiated Parse');
     Parse.serverURL = this.parseServerUrl;
     
   }

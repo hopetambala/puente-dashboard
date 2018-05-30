@@ -21,6 +21,12 @@ page-tables {
 		}
 	}
 
+	.record-card{
+		color: map-get($colors, primary-dark);
+		display: flex;
+    	justify-content: center;
+	}
+
 	@media (min-width: map-get($grid-breakpoints, lg)) {
 
 	}

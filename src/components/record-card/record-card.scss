@@ -16,17 +16,15 @@ record-card {
     }
 
     .flip-container, .front, .back {
-        //Original
-        //width: 90vw;
-        //width: 30vw;
-        width: 45vw;
-        width: 30vw;
+        
+        width: 90vw;
 
         height: 40vh;
         
-        //Original
-        margin: 0px auto;
-        //margin: 20px;
+        //width: 320px;
+	    //height: 480px;
+        
+        margin: 20px auto;
 
     }
 
