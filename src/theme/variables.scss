@@ -44,6 +44,28 @@ $colors: (
   divider:   #BDBDBD
 );
 
+/*
+The minimum dimensions at which your layout will change, 
+adapting to different screen sizes, for use in media queries
+*/
+$grid-breakpoints: (
+ xs: 0, // Phone (0px - 575px)
+ sm: 576px, // Phablet (576px - 767px)
+ md: 768px, // Tablet vertical (768px - 991px)
+ lg: 992px, // Tablet horizontal, Desktop (992px and above)
+ xl: 1200px
+);
+
+/*
+Maximum width of the grid for different screen sizes
+*/
+$grid-max-widths: (
+  sm: 420px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);
+
 
 // App iOS Variables
 // --------------------------------------------------

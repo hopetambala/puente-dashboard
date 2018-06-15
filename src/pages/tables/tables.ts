@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ParseServerProvider } from '../../providers/parse-server/parse-server';
 import { FileManagementProvider } from '../../providers/file-management/file-management';
+import { AuthProvider } from '../../providers/auth/auth';
 
 
 
@@ -22,17 +23,24 @@ import { FileManagementProvider } from '../../providers/file-management/file-man
 })
 export class TablesPage {
 
-  //Array to Hold listQuery() results
   queryResults = [];
   dataArray = [];
+  communityRecords: any[] = [];
 
   //Strings to Help with File-Management
   storageDirectory: string = '';
   csvStr : string = '';
 
-  constructor(private fileManagementProvider:FileManagementProvider, public parseProvider: ParseServerProvider, public navCtrl: NavController, public navParams: NavParams) {
-    this.listQuery();
-    this.convertQuery();
+  constructor(private fileManagementProvider:FileManagementProvider,
+    public auth: AuthProvider, 
+    public parseProvider: ParseServerProvider, 
+    public navCtrl: NavController, 
+    public navParams: NavParams) {
+    //this.listQuery();
+    //this.convertQuery();
+   
+
+    this.aggregateRecords();
     
     //TEST JSON File
     /*
@@ -54,8 +62,31 @@ export class TablesPage {
     
   }
 
-  //Lists QueryData
+
+  //Function that constructs an Array of Community Records
+  public aggregateRecords(){
+    let offset = this.communityRecords.length;
+    let limit = 1000;
+
+
+    return this.parseProvider.basicQuery(offset,limit,'SurveyData','surveyingOrganization',String(this.auth.currentUser().organization)).then((result) =>{
+      for (let i = 0; i < result.length; i++) {
+        let object = result[i];
+        
+        if (object.attributes != null) {
+          this.communityRecords.push(object.attributes);
+        }
+      }
+      console.log(this.communityRecords);
+
+    }, (error) => {
+      console.log(error);
+    });
+  }
+
+
   public listQuery(){
+    //Lists QueryData
     //Creates a natural "skip" of certain results based on surveyPoints length
     let offset = this.queryResults.length;
 
@@ -72,7 +103,7 @@ export class TablesPage {
       console.log(error);
     });
   }
-
+  //TODO
   public convertQuery(){
     //Creates a natural "skip" of certain results based on surveyPoints length
     let offset = this.queryResults.length;
@@ -96,8 +127,9 @@ export class TablesPage {
     //console.log(dataArray);
   }
 
-  //Save JSON data to CSV file
   convertToCSV(items) {
+    //TODO?
+    //Save JSON data to CSV file
     const replacer = (key, value) => value === null ? 'NaN' : value ;// specify how you want to handle null values here
     
     const headers = Object.keys(items[0]);

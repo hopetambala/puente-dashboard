@@ -20,5 +20,19 @@
 
 <ion-content padding class="maps-content">
   <h3>Interactive Map</h3>
-  <div id="map" style="width:100%; height:100%;"></div>
+  <!--div id="map" style="width:100%; height:100%;"></div-->
+  <ion-fab bottom left>
+    <button ion-fab mini class="button" ><ion-icon name="options"></ion-icon></button>
+    <ion-fab-list side="top">
+        <button ion-fab (click)="showMarkers()"><ion-icon name="eye"></ion-icon></button>
+        <button ion-fab (click)="clearMarkers()"><ion-icon name="eye-off"></ion-icon></button>
+        <button ion-fab (click)="deleteMarkers()"><ion-icon name="trash"></ion-icon></button>
+        <button ion-fab (click)="restartMarkers()"><ion-icon name="refresh-circle"></ion-icon></button>
+    </ion-fab-list>
+
+  </ion-fab>
+</ion-content>
+
+<ion-content>
+  <div id="map_canvas"></div>
 </ion-content>

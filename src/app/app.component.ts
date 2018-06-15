@@ -37,10 +37,19 @@ export class MyApp {
   pages: Array<SinglePage>;
 
   //Basic
+  dev:Array<SinglePage> = [
+    new SinglePage('Dashboard',HomePage,true),
+    //new SinglePage('Models',ChartsPage,true),
+    new SinglePage('Data Records',TablesPage,true),
+    new SinglePage('Maps',MapsPage,true),
+    new SinglePage('Account',AccountPage,true)
+  ]
+
+  //Basic
   tier1:Array<SinglePage> = [
     new SinglePage('Dashboard',HomePage,true),
     //new SinglePage('Models',ChartsPage,true),
-    new SinglePage('Data Tables',TablesPage,true),
+    new SinglePage('Data Records',TablesPage,true),
     //new SinglePage('Maps',MapsPage,true),
     new SinglePage('Account',AccountPage,true)
   ]
@@ -48,7 +57,7 @@ export class MyApp {
   tier2:Array<SinglePage> = [
     new SinglePage('Dashboard',HomePage,true),
     //new SinglePage('Models',ChartsPage,true),
-    new SinglePage('Data Tables',TablesPage,true),
+    new SinglePage('Data Records',TablesPage,true),
     new SinglePage('Maps',MapsPage,true),
     new SinglePage('Account',AccountPage,true)
   ]
@@ -57,7 +66,7 @@ export class MyApp {
   tier3:Array<SinglePage> = [
     new SinglePage('Dashboard',HomePage,true),
     new SinglePage('Data Models',ChartsPage,true),
-    new SinglePage('Data Tables',TablesPage,true),
+    new SinglePage('Data Records',TablesPage,true),
     new SinglePage('Maps',MapsPage,true),
     new SinglePage('Account',AccountPage,true)
   ]
@@ -67,7 +76,7 @@ export class MyApp {
     this.initializeApp();
 
     // used for  ngFor and navigation
-    this.pages = this.tier3;
+    this.pages = this.dev;
 
   }
 

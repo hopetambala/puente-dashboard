@@ -5,7 +5,9 @@
 
 
 'use strict';
-importScripts('./build/sw-toolbox.js');
+//Original
+//importScripts('./build/sw-toolbox.js');
+importScripts('https://rawgit.com/GoogleChromeLabs/sw-toolbox/catch-quota-errors/sw-toolbox.js');
 
 self.toolbox.options.cache = {
   name: 'ionic-cache'
@@ -34,8 +36,8 @@ A networkFirst strategy will first attempt to load the assets again from the net
   and if the network is not available it will fall back to the cache.
 */
 //self.toolbox.router.any('/*', self.toolbox.fastest);
-self.toolbox.router.any('/*', self.toolbox.cacheFirst);
-//self.toolbox.router.any('/*', self.toolbox.networkFirst);
+//self.toolbox.router.any('/*', self.toolbox.cacheFirst);
+self.toolbox.router.any('/*', self.toolbox.networkFirst);
 
 // for any other requests go to the network, cache,
 // and then only use that cached resource if your user goes offline

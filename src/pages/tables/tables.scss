@@ -5,7 +5,7 @@ page-tables {
 	.tables-header{
 		color: goldenrod
 	}
-	.tables-content{
+	.page-background{
 		background-color: #333333;
 		color: goldenrod;
 		//overflow-x: scroll;
@@ -19,6 +19,12 @@ page-tables {
 			word-wrap: break-word;
 			//border: 1px solid black;
 		}
+	}
+
+	.record-card{
+		color: map-get($colors, primary-dark);
+		display: flex;
+    	justify-content: center;
 	}
 
 	@media (min-width: map-get($grid-breakpoints, lg)) {

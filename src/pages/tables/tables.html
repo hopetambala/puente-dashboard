@@ -15,8 +15,62 @@
 
 </ion-header>
 
+<ion-content class="page-background">
+<!--
+  <ion-list [virtualScroll]="communityRecords">
+    <ion-grid fixed>
+      <ion-row>
+          <ion-col *virtualItem="let communityRecord">
+              <record-card>
+                <div class="flash-card-front">
+                  {{ communityRecord.fname }}
 
-<ion-content padding class="tables-content">
+                </div>
+              
+                <div class="flash-card-back">
+                  {{ communityRecord.lname }}
+                  {{ communityRecord.sex }}
+                  {{ communityRecord.dob }}
+
+                </div>
+              </record-card>
+          </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+-->
+  <ion-list>
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col *ngFor="let communityRecord of communityRecords" col-12 >
+            <record-card class='record-card'>
+                <div class="flash-card-front">
+                  <h1>{{ communityRecord.lname }}, {{ communityRecord.fname }}</h1>
+                  <h4>License Number: {{ communityRecord.cedulaNumber }}</h4>
+                  <h4>{{ communityRecord.dob }}</h4>
+                  <h6>{{ communityRecord.communityname }}</h6>
+                </div>
+              
+                <div class="flash-card-back">
+                  <h4>General Medical Notes</h4>
+                  <p>Assessment: {{ communityRecord.AssessmentandEvaluation }}</p>
+                  <p>Plan of Action: {{ communityRecord.planOfAction }}</p>
+                  <p>Notes: {{ communityRecord.notes }}</p>
+
+                  <h4>General Dental Notes</h4>
+                  <p>Assessment: {{ communityRecord.AssessmentandEvaluationDental }}</p>
+                  <p>Plan of Action: {{ communityRecord.planOfActionDental }}</p>
+                  <p>Notes: {{ communityRecord.notesDental }}</p>
+                </div>
+            </record-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  </ion-list>
+</ion-content>
+
+
+<!--ion-content padding class="tables-content">
   <button ion-button (click)="saveCsv()" color="secondary">Export</button>
   <ion-item *ngFor="let queryResult of queryResults" align="justify" class="tables-content" loadingSpinner="bubbles" >
     <h1>{{ queryResult.get('fname') }}</h1>
@@ -27,7 +81,7 @@
     <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
-</ion-content>
+</ion-content-->
 
 
   <!--table>

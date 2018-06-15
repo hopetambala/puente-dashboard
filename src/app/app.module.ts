@@ -16,10 +16,14 @@ import { SignupPage } from '../pages/signup/signup';
 import { ListPage } from '../pages/list/list'; //Does Nothing
 
 //My Custom Components
-import { SmartTableComponent } from '../components/smart-table/smart-table'
+import { SmartTableComponent } from '../components/smart-table/smart-table';
+import { RecordCardComponent } from '../components/record-card/record-card';
 
+//Native Imports
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Geolocation } from '@ionic-native/geolocation';
+
 
 //Providers
 import { ParseServerProvider } from '../providers/parse-server/parse-server';
@@ -38,7 +42,8 @@ import { AlertsProvider } from '../providers/alerts/alerts';
     SigninPage,
     SignupPage,
     ListPage,
-    SmartTableComponent
+    SmartTableComponent,
+    RecordCardComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +69,8 @@ import { AlertsProvider } from '../providers/alerts/alerts';
     ParseServerProvider,
     FileManagementProvider,
     AuthProvider,
-    AlertsProvider
+    AlertsProvider,
+    Geolocation
   ]
 })
 export class AppModule {}
